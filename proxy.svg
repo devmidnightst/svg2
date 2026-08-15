@@ -456,7 +456,7 @@
     function newTab() {
       if (address.value == "") { address.focus(); return; }
       const url = search(address.value, searchEngine.value);
-      window.open(url, "_blank");
+      window.open(location.pathname + "?goto=" + encodeURIComponent(url), "_blank");
     }
 
     document.getElementById("open-new-tab").addEventListener("click", newTab);
